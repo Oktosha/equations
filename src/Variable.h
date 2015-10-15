@@ -7,7 +7,11 @@
 
 
 class Variable {
-
+  public:
+    Variable(int x): x(x) {}
+    int get_x();
+  private:
+    int x;
 };
 
 

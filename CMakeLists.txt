@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.3)
-project(equations)
+set(PROJECT_NAME equations)
+project(${PROJECT_NAME})
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
-set(SOURCE_FILES src/main.cpp src/Variable.cpp src/Variable.h)
-add_executable(equations ${SOURCE_FILES})
+add_subdirectory (src)
+
+add_custom_target(
+        run
+        COMMAND demo
+        DEPENDS demo
+        WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+)
