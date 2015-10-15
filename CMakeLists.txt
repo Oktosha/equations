@@ -7,8 +7,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 add_subdirectory (src)
 
 add_custom_target(
-        run
-        COMMAND demo
-        DEPENDS demo
-        WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+    run
+    COMMAND demo
+    DEPENDS demo
+    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
 )
