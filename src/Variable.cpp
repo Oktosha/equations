@@ -4,7 +4,7 @@
 
 #include "Variable.h"
 
-std::ostream& operator << (std::ostream& os, Variable x) {
+std::ostream& operator << (std::ostream& os, const Variable& x) {
     os << x.getName();
     return os;
 }
