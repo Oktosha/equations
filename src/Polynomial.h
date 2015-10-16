@@ -26,6 +26,8 @@ template <class Coefficient> class Polynomial {
         std::swap(_summands, polynomial._summands);
     }
 
+    bool operator == (const Polynomial&) const;
+
   private:
     std::map<Monomial, Coefficient>_summands;
 };
