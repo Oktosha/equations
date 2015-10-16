@@ -17,13 +17,14 @@ TODO
 
 4) polynomial
 =, constructor (var), (monomial)
-==
+==, <<
 
 5) polynomial
 +(polynomial, polynomial)
 *(polynomial, polynomial)
 -(polynomial, polynomial)
-<<
+-(polynomial)
+
 +, *, - var, monomial
 
 
@@ -67,6 +68,7 @@ help
 11) типы в интерпретаторе
 
 Добавить метод tostring, чтобы stringstream не мучить?
+Заменить Monomial и Polynomial на единый template класс (что там, что там мапка из слагаемых в коэффиценты)?
 
 Пример
 ======
@@ -136,3 +138,8 @@ enter "help polynomial :=" to get help on polynomial assignment
 касты запрещены
 по умолчанию тип int
 имена переменных — последовательности больших и маленьких латинских букв не являющимися ключевыми словами variable polynomial all reset equation quit
+
+
+Находки
+=======
+http://stackoverflow.com/questions/21503621/error-in-the-c-programming-language-section-23-4-7-friends

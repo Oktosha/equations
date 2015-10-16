@@ -8,6 +8,22 @@
 
 #include "Monomial.h"
 
+template <class Coefficient> class Polynomial;
+
+template<class Coefficient>
+std::ostream& operator << (std::ostream& os, const Polynomial<Coefficient>& polynomial) {
+    for (auto it = polynomial._summands.cbegin(); it != polynomial._summands.cend(); ++it) {
+        if (it != polynomial._summands.cbegin()) {
+            os << "+ ";
+        }
+        if (it->second != Coefficient(1)) {
+            os << it->second;
+        }
+        os << it->first;
+    }
+    return os;
+}
+
 template <class Coefficient> class Polynomial {
   public:
     Polynomial() : _summands() {}
@@ -29,6 +45,7 @@ template <class Coefficient> class Polynomial {
     }
 
     bool operator == (const Polynomial<Coefficient>&) const;
+    friend std::ostream& operator << <> (std::ostream&, const Polynomial<Coefficient>&);
 
   private:
     std::map<Monomial, Coefficient>_summands;
@@ -50,3 +67,4 @@ bool Polynomial<Coefficient>::operator == (const Polynomial<Coefficient> &polyno
 }
 
 #endif //EQUATIONS_POLYNOMIAL_H
+

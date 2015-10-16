@@ -10,3 +10,10 @@ TEST(PolynomialTest, Equality) {
     EXPECT_EQ(p, p);
     EXPECT_FALSE(p == q);
 }
+
+TEST(PolynomialTest, Print) {
+    Polynomial<int> p(Variable("x"));
+    std::stringstream ss;
+    ss << p;
+    EXPECT_EQ("x", ss.str());
+}
