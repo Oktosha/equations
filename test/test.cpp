@@ -1,10 +1,9 @@
 #include "Variable.h"
 #include <iostream>
+#include "gtest/gtest.h"
 
-using namespace std;
 
-int main() {
-    Variable x(5);
-    cout << "test x:" << x.get_x() << endl;
-    return 1;
+TEST(VariableTest, Sample) {
+    Variable x(3);
+    EXPECT_EQ(2, x.get_x());
 }
