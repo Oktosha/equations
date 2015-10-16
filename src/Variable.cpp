@@ -3,5 +3,3 @@
 //
 
 #include "Variable.h"
-
-int Variable::get_x() { return x; }

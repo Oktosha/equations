@@ -3,7 +3,12 @@
 #include "gtest/gtest.h"
 
 
-TEST(VariableTest, Sample) {
-    Variable x(3);
-    EXPECT_EQ(2, x.get_x());
+TEST(VariableTest, Equality) {
+    Variable x1("x");
+    Variable x2("x");
+    Variable x3 = x1;
+    Variable z("z");
+    EXPECT_EQ(x1, x2);
+    EXPECT_EQ(x1, x3);
+    EXPECT_FALSE(z == x1);
 }

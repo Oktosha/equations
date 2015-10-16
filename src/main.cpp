@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Variable x(3);
-    cout << "current x:" << x.get_x() << endl;
+    Variable x("x");
+    cout << "current x:" << x.get_name() << endl;
     return 0;
 }
