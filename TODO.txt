@@ -15,11 +15,12 @@ TODO
 
 + Добавим оператор <, чтобы класть в мап
 
-4) polynomial
++ 4) polynomial
 =, constructor (var), (monomial)
 ==, <<
 
 5) polynomial
+*(polynomial, Coefficient)
 +(polynomial, polynomial)
 *(polynomial, polynomial)
 -(polynomial, polynomial)

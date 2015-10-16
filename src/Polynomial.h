@@ -45,6 +45,7 @@ template <class Coefficient> class Polynomial {
     }
 
     bool operator == (const Polynomial<Coefficient>&) const;
+    Polynomial operator * (const Coefficient& a) const;
     friend std::ostream& operator << <> (std::ostream&, const Polynomial<Coefficient>&);
 
   private:
@@ -62,6 +63,18 @@ bool Polynomial<Coefficient>::operator == (const Polynomial<Coefficient> &polyno
     for (auto it = _summands.cbegin(); ans && (it != _summands.cend()); ++it) {
         ans = ans && (polynomial._summands.find(it->first) != polynomial._summands.cend())
               && (polynomial._summands.at(it->first) == it->second);
+    }
+    return ans;
+}
+
+template <class Coefficient>
+Polynomial<Coefficient> Polynomial<Coefficient>::operator * (const Coefficient& a) const {
+    if (a == Coefficient(0)) {
+        return Polynomial();
+    }
+    Polynomial<Coefficient> ans = Polynomial<Coefficient>();
+    for (auto it = _summands.cbegin(); it != _summands.cend(); ++it) {
+        ans._summands[it->first] = it->second * a;
     }
     return ans;
 }

@@ -17,3 +17,11 @@ TEST(PolynomialTest, Print) {
     ss << p;
     EXPECT_EQ("x", ss.str());
 }
+
+TEST(PolynomialTest, Multiplication) {
+    Polynomial<int> p(Variable("x"));
+    p = p * 4;
+    std::stringstream ss;
+    ss << p;
+    EXPECT_EQ("4x", ss.str());
+}
