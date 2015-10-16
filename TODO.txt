@@ -1,0 +1,132 @@
+TODO
+====
+
+1) variable 
+=, constructor
+==, <<
+
+2) monomial
+=, constructor (var)
+==, <<
+
+3) pow(variable) monomial
+*(monomial, monomial) monomial
+*(var/monomial, var/monomial)
+
+4) polynomial
+=, constructor (var), (monomial)
+==
+
+5) polynomial
++(polynomial, polynomial)
+*(polynomial, polynomial)
+-(polynomial, polynomial)
+<<
++, *, - var, monomial
+
+6) equation
+=, constructor, <<
+
+7) equation
++ equation
+- equation
+* polynom, monomial, var
+
+8.-1)синтаксический разбор выражения с целыми числами (для показателя степени)
+
+8) синтаксический разбор многочлена из строки
+
+9) интерпретатор на int
+help берёт строчки из специальных файлов и подставляет в них значения
+variable 
+help variable
+polynomial
+help polynomial definition
+polynomial :=
+help polynomial :=
+equation
+help equation definition
+equation :=
+help equation :=
+print
+help print
+quit
+help quit
+reset
+help reset
+help equation, polynomial, variable
+help
+
+10) README
+
+11) типы в интерпретаторе
+
+
+Пример
+======
+
+>>> variable x, y, z
+
+added variables x, y, z to scope
+
+>>> polynomial p, q
+
+added polynomials p, q to scope
+p, q are polynomials on field <int>
+p := 0 (default value)
+q := 0 (default value)
+
+>>> p := x*y + z + 5
+
+successfully assigned given value to p
+
+p := x * y + z + 5
+
+>>> variable q, t
+
+cannot add variables q, t to scope
+because
+q has already been added to scope
+q is polinomial on field <int>
+q := 0
+
+so 
+variables q, t are not added to scope
+
+enter "print all" to see everything defined in the scope
+enter "reset" to to delete everything from the scope
+enter "help variables define" to get help on variables define
+
+>>> equation<int> a
+
+added equation a to scope
+a is equation on field <int>
+a := 0 == 0 (default value)
+
+>>> a := p*x == x * p + 4 * y ^ (2 + 3)
+
+successfully assigned given value to a
+a := (x^2) * y + x * z + 5 * x  == (x^2) * y + x * z + 5 * x + 4 * (y^5)
+
+>>> p := a + q
+
+cannot assign given value to p
+because
+a is an equation
+
+so
+p keeps previous value
+p := x * y + z + 5
+
+enter "help polynomial :=" to get help on polynomial assignment
+
+>>> quit
+
+
+Уточнения
+=========
+
+приоритет у переменной (полинома, уравнения) выше, чем у литерала
+касты запрещены
+по умолчанию тип int
+имена переменных — последовательности больших и маленьких латинских букв не являющимися ключевыми словами variable polynomial all reset equation quit
