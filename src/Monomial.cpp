@@ -27,6 +27,9 @@ Monomial Monomial::operator * (const Monomial& p) const {
         if (!ans._multipliers.insert(*it).second) {
             ans._multipliers.at(it->first) += it->second;
         }
+        if (ans._multipliers.at(it->first) == 0) {
+            ans._multipliers.erase(it->first);
+        }
     }
     return ans;
 }

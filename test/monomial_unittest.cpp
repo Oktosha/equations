@@ -50,6 +50,16 @@ TEST(MonomialTest, Multiplication) {
     EXPECT_EQ(pow(x, 4) * pow(y, 5), x * p);
 }
 
+TEST(MonomialTest, Multiplication0) {
+    Variable x("x");
+    Monomial monomial = pow(x, 3) * pow(x, -3);
+    std::stringstream ss;
+    ss << monomial;
+    EXPECT_EQ("", ss.str());
+    ss << monomial * x;
+    EXPECT_EQ("x", ss.str());
+}
+
 TEST(MonomialTest, Сomparison) {
     Variable x("x"), y("y"), z("z");
     std::vector<Monomial> a;
