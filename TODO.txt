@@ -24,13 +24,6 @@ TODO
 <<
 +, *, - var, monomial
 
-6) equation
-=, constructor, <<
-
-7) equation
-+ equation
-- equation
-* polynom, monomial, var
 
 8.-1)синтаксический разбор выражения с целыми числами (для показателя степени)
 
@@ -44,16 +37,26 @@ polynomial
 help polynomial definition
 polynomial :=
 help polynomial :=
-equation
-help equation definition
-equation :=
-help equation :=
 print
 help print
 quit
 help quit
 reset
 help reset
+
+6) equation
+=, constructor, <<
+
+7) equation
++ equation
+- equation
+* polynom, monomial, var
+
+9.1) Ещё интерпретатор
+equation
+help equation definition
+equation :=
+help equation :=
 help equation, polynomial, variable
 help
 

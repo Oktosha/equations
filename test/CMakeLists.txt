@@ -6,6 +6,10 @@ include_directories(${EQUATIONS_LIB_INCLUDE_DIR} ${gtest_SOURCE_DIR}/include ${g
 link_directories(${gtest_BINARY_DIR})
 
 add_executable(variable_unittest variable_unittest.cpp)
+add_executable(monomial_unittest monomial_unittest.cpp)
 
 target_link_libraries(variable_unittest gtest gtest_main)
 target_link_libraries(variable_unittest EquationsLibrary)
+
+target_link_libraries(monomial_unittest gtest gtest_main)
+target_link_libraries(monomial_unittest EquationsLibrary)
