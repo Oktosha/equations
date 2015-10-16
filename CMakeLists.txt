@@ -4,7 +4,8 @@ project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
-add_subdirectory (src)
+add_subdirectory(src)
+add_subdirectory(test)
 
 add_custom_target(
     run
@@ -12,3 +13,6 @@ add_custom_target(
     DEPENDS demo
     WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
 )
+
+enable_testing ()
+add_test (NAME MyTest COMMAND dummy)
