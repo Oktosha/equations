@@ -79,5 +79,10 @@ Polynomial<Coefficient> Polynomial<Coefficient>::operator * (const Coefficient& 
     return ans;
 }
 
+template <class Coefficient>
+Polynomial<Coefficient> operator * (const Coefficient&a, const Polynomial<Coefficient>& polynomial) {
+    return polynomial * a;
+}
+
 #endif //EQUATIONS_POLYNOMIAL_H
 

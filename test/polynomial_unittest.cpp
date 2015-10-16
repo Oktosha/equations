@@ -24,4 +24,5 @@ TEST(PolynomialTest, Multiplication) {
     std::stringstream ss;
     ss << p;
     EXPECT_EQ("4x", ss.str());
+    EXPECT_EQ(3 * p, p * 3);
 }
