@@ -24,6 +24,7 @@ class Monomial {
         std::swap(_multipliers, p._multipliers);
     }
     bool operator == (const Monomial& p) const;
+    bool operator < (const Monomial& p) const;
     Monomial operator * (const Monomial& p) const;
     friend std::ostream& operator << (std::ostream& os, const Monomial& p);
   private:

@@ -3,6 +3,7 @@
 //
 #include "gtest/gtest.h"
 #include "Monomial.h"
+#include <vector>
 
 TEST(MonomialTest, Equality) {
     Variable x("x"), x1("x");
@@ -49,4 +50,22 @@ TEST(MonomialTest, Multiplication) {
     EXPECT_EQ(pow(x, 4) * pow(y, 5), x * p);
 }
 
-
+TEST(MonomialTest, Сomparison) {
+    Variable x("x"), y("y"), z("z");
+    std::vector<Monomial> a;
+    for (int i = 0; i <= 2; ++i)
+        for (int j = 0; j <= 2; ++j)
+            for (int k = 0; k <= 2; ++k)
+                a.push_back(pow(x, i) * pow(y, j) * pow(z, k));
+    std::sort(a.begin(), a.end());
+    std::stringstream ss;
+    for (auto it = a.begin(); it != a.end(); ++it)
+        ss << *it << " ";
+    std::stringstream as;
+    for (int i = 2; i >= 0; --i)
+        for (int j = 2; j >= 0; --j)
+            for (int k = 2; k >= 0; --k) {
+                as << pow(x, i) * pow(y, j) * pow(z, k) << " ";
+            }
+    EXPECT_EQ(as.str(), ss.str());
+}

@@ -54,3 +54,14 @@ Monomial operator * (const Monomial& p, const Variable& x) {
 Monomial pow(const Variable& x, int degree) {
     return Monomial(x, degree);
 }
+
+bool Monomial::operator < (const Monomial &p) const {
+    for (auto it = _multipliers.cbegin(),
+                 jt = p._multipliers.cbegin(); it != _multipliers.cend() &&
+                                               jt != p._multipliers.cend(); ++it, ++jt) {
+        if ((it->first == jt->first) && (it->second == jt->second))
+            continue;
+        return (it->first < jt->first) || ((it->first == jt->first) && (it->second > jt->second));
+    }
+    return _multipliers.size() > p._multipliers.size();
+}

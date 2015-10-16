@@ -5,13 +5,15 @@ TODO
 =, constructor
 ==, <<
 
-2) monomial
++ 2) monomial
 =, constructor (var)
 ==, <<
 
-3) pow(variable) monomial
++ 3) pow(variable) monomial
 *(monomial, monomial) monomial
 *(var/monomial, var/monomial)
+
++ Добавим оператор <, чтобы класть в мап
 
 4) polynomial
 =, constructor (var), (monomial)
@@ -64,6 +66,7 @@ help
 
 11) типы в интерпретаторе
 
+Добавить метод tostring, чтобы stringstream не мучить?
 
 Пример
 ======
