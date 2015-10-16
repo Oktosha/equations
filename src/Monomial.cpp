@@ -5,7 +5,7 @@
 #include "Monomial.h"
 #include <iostream>
 
-bool Monomial::operator == (const Monomial p) const {
+bool Monomial::operator == (const Monomial& p) const {
     if (&p == this)
         return true;
     if (p._multipliers.size() != _multipliers.size())
@@ -18,7 +18,7 @@ bool Monomial::operator == (const Monomial p) const {
     return ans;
 }
 
-Monomial Monomial::operator * (const Monomial p) const {
+Monomial Monomial::operator * (const Monomial& p) const {
     Monomial ans = Monomial();
     for (auto it = _multipliers.cbegin(); it != _multipliers.cend(); ++it) {
         ans._multipliers.insert(*it);
@@ -40,4 +40,17 @@ std::ostream& operator << (std::ostream& os, const Monomial& p) {
         }
     }
     return os;
+}
+
+Monomial operator * (const Variable& x, const Monomial& p) {
+    return Monomial(x) * p;
+}
+Monomial operator * (const Variable& x, const Variable& y) {
+    return Monomial(x) * Monomial(y);
+}
+Monomial operator * (const Monomial& p, const Variable& x) {
+    return Monomial(x) * p;
+}
+Monomial pow(const Variable& x, int degree) {
+    return Monomial(x, degree);
 }

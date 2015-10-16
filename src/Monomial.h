@@ -23,12 +23,16 @@ class Monomial {
     void swap(Monomial& p) {
         std::swap(_multipliers, p._multipliers);
     }
-    bool operator == (const Monomial p) const;
-    Monomial operator * (const Monomial p) const;
+    bool operator == (const Monomial& p) const;
+    Monomial operator * (const Monomial& p) const;
     friend std::ostream& operator << (std::ostream& os, const Monomial& p);
   private:
     std::map<std::string, int> _multipliers;
 };
 
+Monomial operator * (const Variable& x, const Monomial& p);
+Monomial operator * (const Variable& x, const Variable& y);
+Monomial operator * (const Monomial& p, const Variable& x);
+Monomial pow(const Variable& x, int degree);
 
 #endif //EQUATIONS_MONOMIAL_H
