@@ -19,7 +19,7 @@ class Variable {
     void swap(Variable& x) {
       std::swap(_name, x._name);
     }
-    std::string get_name() const {return _name;}
+    std::string getName() const {return _name;}
 
     bool operator == (Variable x) const { return _name == x._name; }
 

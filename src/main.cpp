@@ -5,6 +5,6 @@ using namespace std;
 
 int main() {
     Variable x("x");
-    cout << "current x:" << x.get_name() << endl;
+    cout << "current x:" << x.getName() << endl;
     return 0;
 }

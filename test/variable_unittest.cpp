@@ -15,7 +15,7 @@ TEST(VariableTest, Equality) {
 
 TEST(VariableTest, GetName) {
     Variable y("y");
-    EXPECT_EQ("y", y.get_name());
+    EXPECT_EQ("y", y.getName());
 }
 
 TEST(VariableTest, Print) {
