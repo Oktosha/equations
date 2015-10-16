@@ -23,6 +23,9 @@ class Monomial {
     void swap(Monomial& p) {
         std::swap(_multipliers, p._multipliers);
     }
+    bool operator == (const Monomial p) const;
+    Monomial operator * (const Monomial p) const;
+    friend std::ostream& operator << (std::ostream& os, const Monomial& p);
   private:
     std::map<std::string, int> _multipliers;
 };
