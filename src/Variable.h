@@ -23,6 +23,8 @@ class Variable {
 
     bool operator == (Variable x) const { return _name == x._name; }
 
+    friend std::ostream& operator << (std::ostream& os, Variable x);
+
   private:
     std::string _name;
 };

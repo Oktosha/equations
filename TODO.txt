@@ -1,7 +1,7 @@
 TODO
 ====
 
-1) variable 
++ 1) variable 
 =, constructor
 ==, <<
 

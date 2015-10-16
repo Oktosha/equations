@@ -12,3 +12,15 @@ TEST(VariableTest, Equality) {
     EXPECT_EQ(x1, x3);
     EXPECT_FALSE(z == x1);
 }
+
+TEST(VariableTest, GetName) {
+    Variable y("y");
+    EXPECT_EQ("y", y.get_name());
+}
+
+TEST(VariableTest, Print) {
+    Variable x("x");
+    std::stringstream ss;
+    ss << x;
+    EXPECT_EQ("x", ss.str());
+}

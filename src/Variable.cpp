@@ -3,3 +3,8 @@
 //
 
 #include "Variable.h"
+
+std::ostream& operator << (std::ostream& os, Variable x) {
+    os << x.get_name();
+    return os;
+}
