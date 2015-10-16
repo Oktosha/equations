@@ -18,4 +18,4 @@ add_custom_target(
 )
 
 enable_testing ()
-add_test (NAME MyTest COMMAND dummy)
+add_test (NAME variable_unittest COMMAND variable_unittest)
