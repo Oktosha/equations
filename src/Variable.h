@@ -12,12 +12,12 @@ class Variable {
     Variable(std::string name): _name(name) {}
     Variable(const Variable& x): _name(x._name) {}
     Variable& operator = (Variable x) {
-      x.swap(*this);
-      return *this;
+        x.swap(*this);
+        return *this;
     }
 
     void swap(Variable& x) {
-      std::swap(_name, x._name);
+        std::swap(_name, x._name);
     }
     std::string getName() const {return _name;}
 
