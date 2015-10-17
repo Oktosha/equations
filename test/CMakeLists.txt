@@ -9,3 +9,8 @@ add_executable(variable_unittest variable_unittest.cpp)
 
 target_link_libraries(variable_unittest gtest gtest_main)
 target_link_libraries(variable_unittest EquationsLibrary)
+
+add_executable(zp_unittest zp_unittest.cpp)
+
+target_link_libraries(zp_unittest gtest gtest_main)
+target_link_libraries(zp_unittest EquationsLibrary)
