@@ -60,6 +60,15 @@ TEST(MonomialTest, Multiplication0) {
     EXPECT_EQ("x", ss.str());
 }
 
+TEST(MonomialTest, Multiplication1) {
+    Variable x("x"), y("y"), z("z");
+    Monomial p = x * y * z;
+    Monomial q = x * y * y;
+    std::stringstream ss;
+    ss << p * q;
+    EXPECT_EQ("(x^2)(y^3)z", ss.str());
+}
+
 TEST(MonomialTest, Сomparison) {
     Variable x("x"), y("y"), z("z");
     std::vector<Monomial> a;

@@ -13,7 +13,7 @@
 class Monomial {
   public:
     Monomial(): _multipliers() {}
-    Monomial(Variable x): _multipliers({{x, 1}}) {}
+    explicit Monomial(Variable x): _multipliers({{x, 1}}) {}
     Monomial(Variable x, int degree): _multipliers({{x, degree}}) {}
     Monomial(const Monomial& p) : _multipliers(p._multipliers) {}
     Monomial& operator = (Monomial p) {
