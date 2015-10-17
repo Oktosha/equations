@@ -29,3 +29,11 @@ TEST(Zp, Print) {
 TEST(Zp, UnaryMinus) {
     EXPECT_EQ(Z<8>(-2), -Z<8>(2));
 }
+
+TEST(Zp, Input) {
+    std::stringstream ss;
+    ss << 5;
+    Z<3> x;
+    ss >> x;
+    EXPECT_EQ(Z<3>(2), x);
+}
