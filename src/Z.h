@@ -32,6 +32,9 @@ class Z {
     Z<P> operator * (const Z<P>& a) const {
         return Z<P>(_x * a._x);
     }
+    Z<P> operator - () const {
+        return Z<P>(-_x);
+    }
     bool operator == (const Z<P>& a) const {
         return _x == a._x;
     }

@@ -25,3 +25,7 @@ TEST(Zp, Print) {
     ss << Z<11>(4) << " " << Z<11>(-3) << " " << Z<11>(13);
     EXPECT_EQ("4 8 2", ss.str());
 }
+
+TEST(Zp, UnaryMinus) {
+    EXPECT_EQ(Z<8>(-2), -Z<8>(2));
+}
