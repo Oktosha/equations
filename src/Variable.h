@@ -21,7 +21,7 @@ class Variable {
     }
     std::string getName() const {return _name;}
 
-    bool operator == (const Variable x) const { return _name == x._name; }
+    bool operator == (const Variable& x) const { return _name == x._name; }
 
     friend std::ostream& operator << (std::ostream& os, const Variable& x);
 
