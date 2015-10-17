@@ -24,3 +24,10 @@ TEST(VariableTest, Print) {
     ss << x;
     EXPECT_EQ("x", ss.str());
 }
+
+TEST(VariableTest, Comparision) {
+    Variable x("x"), y("y");
+    EXPECT_TRUE(x < y);
+    EXPECT_FALSE(y < x);
+    EXPECT_FALSE(x < x);
+}
