@@ -144,3 +144,8 @@ enter "help polynomial :=" to get help on polynomial assignment
 Находки
 =======
 http://stackoverflow.com/questions/21503621/error-in-the-c-programming-language-section-23-4-7-friends
+
+Конструкторы, принимающие на вход одну переменную чужого типа нужно делать explicit, если только не знаешь точно зачем тебе implicit конструирование и не боишься выстрелить себе в ногу. Implicit — это когда из типа параметра конструктора класс конструируется неявно.
+
+Пример выстрела в ногу: Polynomial a = Monomial();
+пустой полином — это 0. Пустой моном — это 1. Получили 1 и страдали.
